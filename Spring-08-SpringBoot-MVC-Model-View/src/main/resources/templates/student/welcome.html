@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Student's page</title>
+</head>
+<body>
+Welcome to Student's page
+<h2 th:text="${name}"></h2>
+<h3 th:text="${students}"></h3>
+<h4 th:text="${student}"></h4>
+<!-- link -->
+<a th:href="@{https://www.google.com}">Google</a>
+<a th:href="@{/student/register}">Register</a>
+<!-- adding parameter to a link -->
+<a th:href="@{/student/welcome(id=${student.getId()})}">Link3</a>
+<!-- Iteration -->
+<ul>
+    <li th:each="name :${students}" th:text="${name}"></li>
+</ul>
+
+<!--fragment-->
+<div th:replace="fragments/footer :: footer1"></div>
+
+
+</body>
+</html>
